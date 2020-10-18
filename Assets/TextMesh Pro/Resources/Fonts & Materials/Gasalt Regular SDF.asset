@@ -113,9 +113,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -160,9 +160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Gasalt Regular SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 1666305223
   material: {fileID: -951021916570763397}
-  materialHashCode: 0
+  materialHashCode: -1784767865
   m_Version: 1.1.0
   m_SourceFontFileGUID: 624985afc5e3c904bbaa9bb7fc260ef3
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 624985afc5e3c904bbaa9bb7fc260ef3, type: 3}
