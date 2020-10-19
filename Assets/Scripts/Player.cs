@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
 
         StopPlayer();
 
-        gameManager.GameOver();
+        gameManager.CallGameOver();
     }
 
     void StopPlayer()

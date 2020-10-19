@@ -10,10 +10,6 @@ public class FollowPlayer : MonoBehaviour
     Vector3 velocity = Vector3.zero;
     public int yoffset;
 
-
-  
-
-
     // Update is called once per frame
     void Update()
     {
