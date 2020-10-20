@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
 
     public GameObject GameOverPanel;
-    
+    public TextMeshProUGUI currentScoreText;
+
+    int currentScore;
+
+
     void Start()
     {
-        
+        currentScore = 0;
+        SetScore();
     }
 
     void Update()
@@ -35,5 +41,17 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+
+    public void AddScore()
+    {
+        currentScore++;
+        SetScore();
+    }
+
+    void SetScore()
+    {
+        currentScoreText.text = currentScore.ToString();
     }
 }

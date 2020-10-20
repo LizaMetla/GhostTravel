@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public GameObject deadEffectObj;
+    public GameObject itemEffectObj;
 
     Rigidbody2D rb;
     float angle = 0;
@@ -76,7 +78,24 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Dead();
+        if (other.gameObject.tag == "Obstacle")
+        {
+            Dead();
+        } 
+        else if(other.gameObject.tag == "item")
+        {
+            Debug.Log("Score + 1");
+            GetItem(other);
+            //gameManager.AddScore();
+        }
+       
+    }
+
+    void GetItem(Collider2D other)
+    {
+        Destroy(Instantiate(itemEffectObj, other.gameObject.transform.position, Quaternion.identity), 0.5f);
+        Destroy(other.gameObject.transform.parent.gameObject); 
+        gameManager.AddScore();
     }
 
     void Dead()
