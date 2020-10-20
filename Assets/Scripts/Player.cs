@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
             if (rb.velocity.y > 0)
             {
                 //Debug.Log("NOT GetMouseButton");
-                rb.AddForce(new Vector2(0, -ySpeed));
+                rb.AddForce(new Vector2(0, -ySpeed/2f));
             }
             else
             {
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
         isDead = true;
         StartCoroutine(Camera.main.gameObject.GetComponent<CameraShake>().Shake());
         //Instantiate позволяет создавать объекты в определённом месте при помощи скрипта
-        Destroy(Instantiate(deadEffectObj, transform.position, Quaternion.identity), 0.3f);
+        Destroy(Instantiate(deadEffectObj, transform.position, Quaternion.identity), 0.5f);
         //Quaternion(кватерионы) использую для хаотичного вращения частиц 
 
         StopPlayer();

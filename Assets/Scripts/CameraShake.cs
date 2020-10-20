@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour
 {
 
-    float duration = 0.3f;
-    float magnitude = 0.3f;
+    float duration = 0.2f;
+    float magnitude = 0.2f;
 
     public IEnumerator Shake()
     {
