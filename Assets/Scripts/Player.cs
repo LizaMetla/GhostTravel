@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
     void Dead()
     {
         isDead = true;
-
+        StartCoroutine(Camera.main.gameObject.GetComponent<CameraShake>().Shake());
         //Instantiate позволяет создавать объекты в определённом месте при помощи скрипта
         Destroy(Instantiate(deadEffectObj, transform.position, Quaternion.identity), 0.3f);
         //Quaternion(кватерионы) использую для хаотичного вращения частиц 
