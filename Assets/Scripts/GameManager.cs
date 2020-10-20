@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject GameOverPanel;
     public TextMeshProUGUI currentScoreText;
+    public TextMeshProUGUI bestScoreText;
 
     int currentScore;
 
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentScore = 0;
+        bestScoreText.text = PlayerPrefs.GetInt("BestScore", 0).ToString();
         SetScore();
     }
 
@@ -47,6 +49,11 @@ public class GameManager : MonoBehaviour
     public void AddScore()
     {
         currentScore++;
+        if (currentScore > PlayerPrefs.GetInt("BestScore", 0))
+        {
+            PlayerPrefs.SetInt("BestScore", currentScore);
+            bestScoreText.text = currentScore.ToString();
+        }
         SetScore();
     }
 
